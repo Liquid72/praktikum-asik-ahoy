@@ -83,7 +83,7 @@ class _MyAppState extends State<MyApp> {
 ```
 
 ## Implementasi Widget
-Dalam praktikum minggu ini saya telah mengimplementasikan widgets StatelessWidget dan StatefulWidget untuk membuat sebuak aplikasi task tracker sederhana. [Klik disini](/lib/) untuk melihat implementasi widget.
+Dalam praktikum minggu ini saya telah mengimplementasikan widgets StatelessWidget dan StatefulWidget untuk membuat sebuak aplikasi task tracker sederhana. [Klik disini](./lib) untuk melihat implementasi widget.
 
 
 
