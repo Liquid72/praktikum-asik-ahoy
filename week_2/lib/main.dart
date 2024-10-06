@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:week_2/widget/task.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp,
+    ],
+  );
   runApp(const MyApp());
 }
 
 var kColorScheme =
     ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 80, 172, 211));
+
+var kDarkColorScheme = ColorScheme.fromSeed(
+    seedColor: const Color.fromARGB(255, 80, 172, 211),
+    brightness: Brightness.dark);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,6 +26,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      darkTheme: ThemeData.dark().copyWith(
+        useMaterial3: true,
+        colorScheme: kDarkColorScheme,
+        appBarTheme: const AppBarTheme().copyWith(
+            backgroundColor: kDarkColorScheme.onPrimaryContainer,
+            foregroundColor: kDarkColorScheme.primaryContainer),
+        cardTheme: const CardTheme().copyWith(
+          color: kDarkColorScheme.secondaryContainer,
+          margin: const EdgeInsets.fromLTRB(8, 12, 8, 12),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: kDarkColorScheme.primaryContainer,
+              foregroundColor: kDarkColorScheme.onPrimaryContainer),
+        ),
+      ),
       theme: ThemeData(
         colorScheme: kColorScheme,
         appBarTheme: const AppBarTheme().copyWith(
@@ -23,7 +49,7 @@ class MyApp extends StatelessWidget {
             foregroundColor: kColorScheme.primaryContainer),
         cardTheme: const CardTheme().copyWith(
           color: kColorScheme.secondaryContainer,
-          margin: const EdgeInsets.all(8),
+          margin: const EdgeInsets.all(16),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -32,6 +58,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
+      themeMode: ThemeMode.system,
       home: const Tasks(),
     );
   }

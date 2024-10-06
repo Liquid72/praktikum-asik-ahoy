@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:week_2/model/task.dart';
 import 'package:week_2/widget/task/taskForm.dart';
+import 'package:week_2/widget/task/taskHeader.dart';
 import 'package:week_2/widget/task/taskList.dart';
 
 class Tasks extends StatefulWidget {
@@ -57,7 +58,13 @@ class _TaskState extends State<Tasks> {
     Widget mainContent = const Center(child: Text('No Task Found'));
 
     if (_taskList.isNotEmpty) {
-      mainContent = Tasklist(taskList: _taskList, removeTask: _removeTask);
+      mainContent = Column(
+        children: [
+          // const Text('Task List'),
+          taskHeader(totalTask: _taskList.length),
+          Tasklist(taskList: _taskList, removeTask: _removeTask),
+        ],
+      );
     } else {
       mainContent = const Center(child: Text('No Task Found'));
     }
@@ -79,7 +86,7 @@ class _TaskState extends State<Tasks> {
         child: Column(
           children: [
             // const Text('Task List'),
-            Expanded(child: mainContent),
+            Expanded(child: mainContent)
           ],
         ),
       ),
