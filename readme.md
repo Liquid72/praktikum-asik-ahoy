@@ -4,6 +4,8 @@ This repository contains a collection of my reports & experiments in the Mobile 
 ## Table of Contents
 - [Week 1](/week_1) - Introduction to Mobile & Web Service
 - [Week 2](/week_2) - Flutter Widgets
+- [Week 3](/week_3) - Flutter Basic Layout
+- [Week 4](/week_4) - Flutter ListViews
 ## Disclaimer
 This repository is intended for educational purposes, don't copy-paste the code without understanding it. If you have any questions, you can contact me via email or open an issue in this repository.
 
