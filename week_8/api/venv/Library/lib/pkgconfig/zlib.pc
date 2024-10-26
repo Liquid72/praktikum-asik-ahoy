@@ -1,0 +1,13 @@
+prefix=E:/project_belajar/praktikum-asik-ahoy/week_8/api/venv/Library
+exec_prefix=E:/project_belajar/praktikum-asik-ahoy/week_8/api/venv/Library
+libdir=E:/project_belajar/praktikum-asik-ahoy/week_8/api/venv/Library/lib
+sharedlibdir=E:/project_belajar/praktikum-asik-ahoy/week_8/api/venv/Library/lib
+includedir=E:/project_belajar/praktikum-asik-ahoy/week_8/api/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
